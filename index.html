@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- double {{}} is for string interpolation with vue -->
+    <div id="app">{{message}}</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        // to create a vue app, you have to connect JS wiht the HTML. We use the app div for this.
+
+        // first thing to do - create an instance of vue. This is coming from the src in line 6.
+        new Vue({
+            // define which element vue is going to use. do this with css notation.
+            el: '#app',
+            // the data property is built into vue, but you can pass any info you want into it. You can then use the properties as variables - see above in the app div.
+            data: {
+                message: 'hello Vue world',
+            },
+        })
+    </script>
+</html>
