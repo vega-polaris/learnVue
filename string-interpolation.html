@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <div id="app">
+      <h1>{{ message }}</h1>
+      <h1>{{ number + 1 }}</h1>
+      <h1>{{ isActive ? "is active" : "is not active"}}</h1>
+      <h1>{{ message.split("").reverse().join("")}}</h1>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = new Vue({
+        el: "#app",
+        data: {
+          message: "Hello World!",
+          number: 10,
+          isActive: true,
+        },
+      });
+    </script>
+  </body>
+</html>
