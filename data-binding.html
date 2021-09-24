@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- double {{}} is for string interpolation with vue -->
+    <div id="app">
+        <!-- links are a little tricky. You use the href attribute, but to do that you can't use mustache syntax inside an attribute; how do you tell your a label that the link to follow should be of a URL that's stored in the data? This is done with v-binding. The syntax below is a shorthand for <v-bind:> -->
+        <h1><a :href="url">Fat</a></h1>
+        <!-- this can be done to use an attribute dynamically from anywhere. -->
+        <h1 :id="dynamicId">Hello</h1>
+        <!-- the above line means that the string "dynamicId" is actually a var representing the same key in the data object of the Vue constructor. -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        // to create a vue app, you have to connect JS wiht the HTML. We use the app div for this.
+
+        // first thing to do - create an instance of vue. This is coming from the src in line 6.
+        new Vue({
+            // define which element vue is going to use. do this with css notation.
+            el: '#app',
+            // the data property is built into vue, but you can pass any info you want into it. You can then use the properties as variables - see above in the app div.
+            data: {
+                url:
+                    'https://cdn.shopify.com/s/files/1/0347/6329/products/fat-plushie_1024x1024.png?v=1545943935',
+                dynamicId: 'chickens',
+            },
+        })
+    </script>
+</html>
